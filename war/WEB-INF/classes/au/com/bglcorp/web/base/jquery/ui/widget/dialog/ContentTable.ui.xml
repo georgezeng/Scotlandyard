@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel>
+		<table ui:field="contentPanel" style="table-layout: fixed;">
+			<tr>
+				<td style="word-break: break-all; word-wrap:break-word;"></td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+</ui:UiBinder> 

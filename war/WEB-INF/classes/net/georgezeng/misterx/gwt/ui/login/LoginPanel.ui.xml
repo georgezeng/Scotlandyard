@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.google.gwt.canvas.client">
+	<g:HTMLPanel addStyleNames="loginPanel">
+		<div class="loginItem">
+			游戏昵称：
+			<g:TextBox ui:field="playerName" />
+			(3-10个字符)
+		</div>
+		<div class="loginItem">
+			<div class="marginBottom_10">
+				游戏角色：
+				<g:ListBox ui:field="playerSide" /> 
+				<span ui:field="tip">(注： 警察可选多位)</span>
+			</div>
+			<div ui:field="policeList" class="marginBottom_10">
+				<g:CheckBox ui:field="policeA" />
+				<span ui:field="policeAText"></span>
+				<g:CheckBox ui:field="policeB" />
+				<span ui:field="policeBText"></span>
+				<g:CheckBox ui:field="policeC" />
+				<span ui:field="policeCText"></span>
+				<g:CheckBox ui:field="policeD" />
+				<span ui:field="policeDText"></span>
+				<g:CheckBox ui:field="policeE" />
+				<span ui:field="policeEText"></span>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

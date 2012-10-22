@@ -1,0 +1,159 @@
+body {
+	background-image: url("../images/bg.jpg");
+}
+
+.clearfix {
+	clear: both;
+}
+
+.stationHolder {
+	border-radius: 50% 50% 50% 50%;
+	height: 80px;
+	position: absolute;
+	width: 80px;
+	cursor: pointer;
+	z-index: 1;
+	background-image: url("../images/opacity.png");
+	background-repeat: repeat;
+}
+
+.MisterX {
+	z-index: -1;
+	background-color: gray;
+}
+
+.MisterX_available {
+	opacity: 0.5;
+}
+
+.ticketPanel {
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	width: 600px;
+}
+
+.tip-darkgray {
+	opacity: 0.9;
+	text-align: left;
+	text-shadow: #444 0 1px 1px;
+	padding: 8px;
+	background-image: url(../images/tip-darkgray.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	float: left;
+	border: none;
+	min-width: 10px;
+}
+
+.tip-arrow-top {
+	opacity: 0.9;
+	margin-left: 30px;
+	position: relative;
+	top: 2px;
+	left: 0;
+	width: 16px;
+	height: 10px;
+	background: url(../images/tip-darkgray_arrows.png) no-repeat;
+}
+
+.ticketPanel_middleTop {
+	background-repeat: repeat;
+	background-position: -200px 0px;
+	min-width: auto;
+}
+
+.ticketPanel_rightTop {
+	background-position: -995px 0px;
+}
+
+.ticketPanel_leftCenter,.ticketPanel_middleCenter,.ticketPanel_rightCenter
+	{
+	height: 60px;
+}
+
+.ticketPanel_leftCenter {
+	background-position: 0px -200px;
+}
+
+.ticketPanel_middleCenter {
+	background-repeat: repeat;
+	background-position: -200px;
+	min-width: 1px;
+}
+
+.ticketPanel_rightCenter {
+	background-position: -995px -200px;
+}
+
+.ticketPanel_leftBottom {
+	background-position: 0px -748px;
+}
+
+.ticketPanel_middleBottom {
+	background-repeat: repeat;
+	background-position: -200px -748px;
+	min-width: 1px;
+}
+
+.ticketPanel_rightBottom {
+	background-position: -995px -748px;
+}
+
+.ticketPanel_middleTop,.ticketPanel_middleCenter,.ticketPanel_middleBottom
+	{
+	width: 430px;
+}
+
+.logoSign {
+	cursor: pointer;
+	height: 60px;
+	width: 70px;
+	float: left;
+}
+
+.taxiSign {
+	background-image: url("../images/taxi.jpg");
+}
+
+.busSign {
+	background-image: url("../images/bus.jpg");
+	margin-left: 20px;
+}
+
+.metroSign {
+	background-image: url("../images/metro.jpg");
+	margin-left: 20px;
+}
+
+.hiddenWalkSign {
+	background-image: url("../images/hidden_walk.jpg");
+	margin-left: 20px;
+}
+
+.x2Sign {
+	background-image: url("../images/2x.jpg");
+	margin-left: 20px;
+}
+
+.loginItem {
+	margin: 0 0 10px 0;
+}
+
+.marginBottom_10 {
+	margin-bottom: 10px;
+}
+
+.floatLeft {
+	float: left;
+	width: 60px;
+}
+
+.tick {
+	display: none;
+	width: 29px;
+	height: 25px;
+	margin-left: 10px;
+	background-image: url("../images/tick.png");
+	background-repeat: no-repeat;
+}

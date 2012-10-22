@@ -1,0 +1,2 @@
+serviceClass: net.georgezeng.misterx.gwt.rpc.RPC
+path: 29993D9B2F2C6B156413733EF51D9C1B.gwt.rpc
