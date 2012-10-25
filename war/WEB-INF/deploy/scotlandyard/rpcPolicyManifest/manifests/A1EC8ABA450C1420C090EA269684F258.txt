@@ -1,2 +1,0 @@
-serviceClass: net.georgezeng.misterx.shared.rpc.RPC
-path: 75A2ACB6B3BFDBE9E6FDD4A1BAA86464.gwt.rpc
