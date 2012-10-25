@@ -15,7 +15,7 @@ public class DialogButton extends JavaScriptObject {
 
   public native final void setClickHandler(JQCommonHandler handler) /*-{
 		this.click = function() {
-			handler.@au.com.bglcorp.web.base.jquery.core.handler.base.JQCommonHandler::call(Lcom/google/gwt/dom/client/Element;)(this);
+			handler.@net.georgezeng.gwt.base.jquery.core.handler.base.JQCommonHandler::call(Lcom/google/gwt/dom/client/Element;)(this);
 		};
   }-*/;
 

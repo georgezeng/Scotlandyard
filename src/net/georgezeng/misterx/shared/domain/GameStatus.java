@@ -14,7 +14,7 @@ public class GameStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private boolean isGaming;
-	private final List<PlayerUnit> policeRegUnits = new ArrayList<PlayerUnit>();
+	private List<PlayerUnit> policeRegUnits = new ArrayList<PlayerUnit>();
 	private List<PlayerUnit> policeUnits = new ArrayList<PlayerUnit>();
 	private Player misterX;
 	private Player host;

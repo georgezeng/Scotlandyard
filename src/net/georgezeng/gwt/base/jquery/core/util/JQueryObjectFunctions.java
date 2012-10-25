@@ -142,7 +142,7 @@ public class JQueryObjectFunctions extends JavaScriptObjectFunctions {
 		if (handler) {
 			argumentArr
 					.push(function(event) {
-						handler.@net.georgezeng.gwt.base.jquery.core.handler.base.JQEventHandler::call(Lcom/google/gwt/dom/client/Element;Lau/com/bglcorp/web/base/jquery/core/bean/event/JQEvent;)(this, event);
+						handler.@net.georgezeng.gwt.base.jquery.core.handler.base.JQEventHandler::call(Lcom/google/gwt/dom/client/Element;Lnet/georgezeng/gwt/base/jquery/core/bean/event/JQEvent;)(this, event);
 					});
 		}
 		return jqObj[functionName].apply(jqObj, argumentArr);

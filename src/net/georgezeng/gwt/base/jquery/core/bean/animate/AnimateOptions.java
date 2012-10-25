@@ -74,7 +74,7 @@ public class AnimateOptions extends JavaScriptObject {
 
   public final native void setStepHandler(JQAnimateStepHandler handler) /*-{
 		this.step = function(now, fx) {
-			handler.@net.georgezeng.gwt.base.jquery.core.handler.JQAnimateStepHandler::call(Lcom/google/gwt/dom/client/Element;DLau/com/bglcorp/web/base/jquery/core/JQuery$FX;)(this, now, fx);
+			handler.@net.georgezeng.gwt.base.jquery.core.handler.JQAnimateStepHandler::call(Lcom/google/gwt/dom/client/Element;DLnet/georgezeng/gwt/base/jquery/core/JQuery$FX;)(this, now, fx);
 		};
   }-*/;
 
