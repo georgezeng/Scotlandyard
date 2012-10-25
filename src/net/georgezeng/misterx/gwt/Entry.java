@@ -61,7 +61,7 @@ public class Entry extends Composite implements EntryPoint {
 	}
 
 	public void createGame() {
-		Constant.LOGIN_PANEL.close();
+		Constant.READY_PANEL.close();
 		final Dialog waitBox = BaseDialogFactory.openWaitBox("正在创建内容，请稍候...");
 		new Timer() {
 
@@ -69,6 +69,8 @@ public class Entry extends Composite implements EntryPoint {
 			public void run() {
 				try {
 					toCreateGame();
+					Constant.ACTIVITY.toSyncAllPlayers();
+					waitBox.setContent("游戏初始化成功，正在同步用户...");
 					waitBox.destroy();
 				} catch (Exception e) {
 					waitBox.destroy();

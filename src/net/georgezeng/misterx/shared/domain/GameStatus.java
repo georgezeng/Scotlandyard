@@ -93,6 +93,10 @@ public class GameStatus implements Serializable {
 		totalUnits.addAll(player.getUnits());
 	}
 
+	public List<Player> getPlayers() {
+		return totalPlayers;
+	}
+
 	public Player goToNextHost(Player quitPlayer) {
 		clearPlayer(quitPlayer);
 		host = null;
@@ -136,6 +140,10 @@ public class GameStatus implements Serializable {
 				throw new RPCException(errorMsg.toString());
 			}
 		}
+	}
+
+	public boolean isCouldPlayGame() {
+		return policeUnits.size() > 3 && misterX != null;
 	}
 
 }

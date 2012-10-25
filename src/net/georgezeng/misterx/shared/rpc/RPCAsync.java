@@ -13,4 +13,6 @@ public interface RPCAsync {
 
 	void quit(Player player, AsyncCallback<Void> callback);
 
+	void getGameStatus(AsyncCallback<GameStatus> callback);
+
 }

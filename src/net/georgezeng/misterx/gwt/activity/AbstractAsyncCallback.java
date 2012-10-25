@@ -26,6 +26,11 @@ public abstract class AbstractAsyncCallback<T> implements AsyncCallback<T> {
 		dialog.open();
 		dialog.setAutoHeight();
 		dialog.setAutoWidth();
+		doOnFailure();
+	}
+	
+	protected void doOnFailure() {
+		
 	}
 
 }

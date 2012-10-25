@@ -30,6 +30,8 @@ public interface RPC extends RemoteService {
 	 * 
 	 * @param player
 	 */
-	void quit(Player player)  throws RPCException;
+	void quit(Player player) throws RPCException;
+	
+	GameStatus getGameStatus() throws RPCException;
 
 }

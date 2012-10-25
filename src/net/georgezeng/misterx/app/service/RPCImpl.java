@@ -30,4 +30,9 @@ public class RPCImpl implements RPC {
 		gameSet = new GameSet(1L);
 	}
 
+	@Override
+	public GameStatus getGameStatus() {
+		return gameSet.getStatus();
+	}
+
 }

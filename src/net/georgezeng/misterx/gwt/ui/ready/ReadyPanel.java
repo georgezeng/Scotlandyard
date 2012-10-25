@@ -17,6 +17,7 @@ import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -78,11 +79,11 @@ public class ReadyPanel extends Composite {
 		policeCText.setInnerHTML(PlayerUnitType.PoliceC.getName());
 		policeDText.setInnerHTML(PlayerUnitType.PoliceD.getName());
 		policeEText.setInnerHTML(PlayerUnitType.PoliceE.getName());
-
 		showTicks(Constant.STATUS.getTotalUnits());
+		Constant.START_CHECKER.scheduleRepeating(3000);
 	}
 
-	private void showTicks(List<PlayerUnit> units) {
+	public void showTicks(List<PlayerUnit> units) {
 		for (PlayerUnit unit : units) {
 			switch (unit.getType()) {
 			case MisterX: {
@@ -124,7 +125,6 @@ public class ReadyPanel extends Composite {
 
 			@Override
 			public void call(Element thisEl) {
-
 			}
 		});
 		dialog.setButtons(okButton);
@@ -137,5 +137,5 @@ public class ReadyPanel extends Composite {
 	public void close() {
 		dialog.destroy();
 	}
-
+	
 }

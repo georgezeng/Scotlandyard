@@ -1,7 +1,5 @@
 package net.georgezeng.misterx.app.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import net.georgezeng.misterx.shared.domain.GameStatus;
@@ -11,7 +9,6 @@ import net.georgezeng.misterx.shared.exception.RPCException;
 public class GameSet {
 	private Long roomId;
 	private GameStatus status;
-	private List<Player> players = new ArrayList<Player>();
 	private volatile String key;
 
 	public GameSet(Long roomId) {
@@ -35,6 +32,9 @@ public class GameSet {
 	}
 
 	public synchronized GameStatus checkStatus() {
+		if (status.getTotalUnits().size() == 6) {
+			throw new RPCException("房间已满员，请等待其它玩家退出或者游戏结束后重新抢位进入");
+		}
 		String tmpKey = null;
 		if (key == null) {
 			key = UUID.randomUUID().toString();
@@ -46,12 +46,11 @@ public class GameSet {
 
 	public synchronized GameStatus readyToGame(Player player) {
 		// 检查昵称是否重复
-		if (players.contains(player)) {
+		if (status.getPlayers().contains(player)) {
 			throw new RPCException("昵称已被使用，请重新输入新的昵称");
 		}
 		// 检查角色是否已经被选取
 		status.checkHasBeenChosen(player);
-		players.add(player);
 		if (player.getKey() != null) {
 			if (!key.equals(player.getKey())) {
 				throw new RPCException("key不对，玩家身份非法，请联系管理员");
@@ -75,5 +74,9 @@ public class GameSet {
 		} else {
 			status.clearPlayer(player);
 		}
+	}
+
+	public GameStatus getStatus() {
+		return status;
 	}
 }
