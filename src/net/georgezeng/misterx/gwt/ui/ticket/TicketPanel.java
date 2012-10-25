@@ -1,6 +1,6 @@
 package net.georgezeng.misterx.gwt.ui.ticket;
 
-import au.com.bglcorp.web.base.jquery.core.JQuery;
+import net.georgezeng.gwt.base.jquery.core.JQuery;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;

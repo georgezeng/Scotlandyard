@@ -1,10 +1,10 @@
 package net.georgezeng.misterx.gwt.activity;
 
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.BaseDialogFactory;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.component.WaitBox;
 import net.georgezeng.misterx.gwt.util.Constant;
 import net.georgezeng.misterx.shared.domain.GameStatus;
 import net.georgezeng.misterx.shared.rpc.RPC;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.BaseDialogFactory;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.component.WaitBox;
 
 public class Activity {
 

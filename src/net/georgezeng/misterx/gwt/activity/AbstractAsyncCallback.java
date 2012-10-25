@@ -1,9 +1,9 @@
 package net.georgezeng.misterx.gwt.activity;
 
+import net.georgezeng.gwt.base.jquery.core.handler.base.JQCommonHandler;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.Dialog;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButtonFactory;
 import net.georgezeng.misterx.gwt.util.Constant;
-import au.com.bglcorp.web.base.jquery.core.handler.base.JQCommonHandler;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.Dialog;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.DialogButtonFactory;
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.rpc.AsyncCallback;

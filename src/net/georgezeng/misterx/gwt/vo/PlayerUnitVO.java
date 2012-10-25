@@ -1,9 +1,9 @@
 package net.georgezeng.misterx.gwt.vo;
 
+import net.georgezeng.gwt.base.jquery.core.JQuery;
+import net.georgezeng.gwt.base.jquery.core.bean.JQueryObject;
+import net.georgezeng.gwt.base.jquery.core.bean.Position;
 import net.georgezeng.misterx.shared.domain.PlayerUnit;
-import au.com.bglcorp.web.base.jquery.core.JQuery;
-import au.com.bglcorp.web.base.jquery.core.bean.JQueryObject;
-import au.com.bglcorp.web.base.jquery.core.bean.Position;
 
 import com.google.gwt.user.client.ui.RootPanel;
 

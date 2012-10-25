@@ -2,23 +2,21 @@ package net.georgezeng.misterx.gwt.ui.ready;
 
 import java.util.List;
 
+import net.georgezeng.gwt.base.jquery.core.JQuery;
+import net.georgezeng.gwt.base.jquery.core.bean.JQueryObject;
+import net.georgezeng.gwt.base.jquery.core.handler.base.JQCommonHandler;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.Dialog;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButton;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButtonFactory;
 import net.georgezeng.misterx.gwt.util.Constant;
 import net.georgezeng.misterx.shared.domain.PlayerUnit;
 import net.georgezeng.misterx.shared.enums.PlayerUnitType;
-import au.com.bglcorp.web.base.jquery.core.JQuery;
-import au.com.bglcorp.web.base.jquery.core.bean.JQueryObject;
-import au.com.bglcorp.web.base.jquery.core.handler.base.JQCommonHandler;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.Dialog;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.DialogButton;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.DialogButtonFactory;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 

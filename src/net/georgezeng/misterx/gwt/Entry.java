@@ -1,13 +1,13 @@
 package net.georgezeng.misterx.gwt;
 
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.BaseDialogFactory;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.Dialog;
 import net.georgezeng.misterx.gwt.ui.login.LoginPanel;
 import net.georgezeng.misterx.gwt.ui.map.Creator;
 import net.georgezeng.misterx.gwt.ui.ready.ReadyPanel;
 import net.georgezeng.misterx.gwt.ui.ticket.TicketPanel;
 import net.georgezeng.misterx.gwt.util.Constant;
 import net.georgezeng.misterx.shared.domain.Player;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.BaseDialogFactory;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.Dialog;
 
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.core.client.EntryPoint;

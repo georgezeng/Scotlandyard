@@ -3,21 +3,20 @@ package net.georgezeng.misterx.gwt.ui.login;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.georgezeng.misterx.gwt.ui.ready.ReadyPanel;
+import net.georgezeng.gwt.base.jquery.core.JQuery;
+import net.georgezeng.gwt.base.jquery.core.bean.JQueryObject;
+import net.georgezeng.gwt.base.jquery.core.bean.event.JQEvent;
+import net.georgezeng.gwt.base.jquery.core.handler.base.JQCommonHandler;
+import net.georgezeng.gwt.base.jquery.core.handler.base.JQEventHandler;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.BaseDialogFactory;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.Dialog;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButton;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButtonFactory;
 import net.georgezeng.misterx.gwt.util.Constant;
 import net.georgezeng.misterx.shared.domain.Player;
 import net.georgezeng.misterx.shared.domain.PlayerUnit;
 import net.georgezeng.misterx.shared.enums.PlayerType;
 import net.georgezeng.misterx.shared.enums.PlayerUnitType;
-import au.com.bglcorp.web.base.jquery.core.JQuery;
-import au.com.bglcorp.web.base.jquery.core.bean.JQueryObject;
-import au.com.bglcorp.web.base.jquery.core.bean.event.JQEvent;
-import au.com.bglcorp.web.base.jquery.core.handler.base.JQCommonHandler;
-import au.com.bglcorp.web.base.jquery.core.handler.base.JQEventHandler;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.BaseDialogFactory;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.Dialog;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.DialogButton;
-import au.com.bglcorp.web.base.jquery.ui.widget.dialog.DialogButtonFactory;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;
@@ -94,22 +93,24 @@ public class LoginPanel extends Composite {
 		final JQueryObject jPlist = JQuery.$(policeList).hide();
 		if (Constant.STATUS.getMisterX() == null) {
 			playerSide.addItem("反派 - X先生", PlayerType.MisterX.name());
+			JQuery.$(playerSide).change(new JQEventHandler() {
+				
+				@Override
+				public void call(Element thisEl, JQEvent jqEvent) {
+					JQueryObject jThis = JQuery.$(thisEl);
+					if (jThis.val().equals("MisterX")) {
+						jTip.hide();
+						jPlist.hide();
+					} else {
+						jTip.show();
+						jPlist.show();
+					}
+				}
+			});
+		} else {
+			jPlist.show();
 		}
 		playerSide.addItem("正派 - 警察", PlayerType.Police.name());
-		JQuery.$(playerSide).change(new JQEventHandler() {
-
-			@Override
-			public void call(Element thisEl, JQEvent jqEvent) {
-				JQueryObject jThis = JQuery.$(thisEl);
-				if (jThis.val().equals("MisterX")) {
-					jTip.hide();
-					jPlist.hide();
-				} else {
-					jTip.show();
-					jPlist.show();
-				}
-			}
-		});
 		for (PlayerUnit unit : Constant.STATUS.getPoliceRegUnits()) {
 			switch (unit.getType()) {
 			case PoliceA: {

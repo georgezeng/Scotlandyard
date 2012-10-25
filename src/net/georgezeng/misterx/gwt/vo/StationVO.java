@@ -1,10 +1,10 @@
 package net.georgezeng.misterx.gwt.vo;
 
+import net.georgezeng.gwt.base.jquery.core.JQuery;
+import net.georgezeng.gwt.base.jquery.core.bean.JQueryObject;
+import net.georgezeng.gwt.base.jquery.core.bean.Position;
 import net.georgezeng.misterx.gwt.Entry;
 import net.georgezeng.misterx.shared.domain.Station;
-import au.com.bglcorp.web.base.jquery.core.JQuery;
-import au.com.bglcorp.web.base.jquery.core.bean.JQueryObject;
-import au.com.bglcorp.web.base.jquery.core.bean.Position;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
