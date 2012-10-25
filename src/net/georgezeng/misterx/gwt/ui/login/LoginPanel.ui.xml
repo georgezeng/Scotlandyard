@@ -14,16 +14,30 @@
 				<span ui:field="tip">(注： 警察可选多位)</span>
 			</div>
 			<div ui:field="policeList" class="marginBottom_10">
-				<g:CheckBox ui:field="policeA" />
-				<span ui:field="policeAText" class="marginRight_15"></span>
-				<g:CheckBox ui:field="policeB" />
-				<span ui:field="policeBText" class="marginRight_15"></span>
-				<g:CheckBox ui:field="policeC" />
-				<span ui:field="policeCText" class="marginRight_15"></span>
-				<g:CheckBox ui:field="policeD" />
-				<span ui:field="policeDText" class="marginRight_15"></span>
-				<g:CheckBox ui:field="policeE" />
-				<span ui:field="policeEText" class="marginRight_15"></span>
+			    <span>
+					<g:CheckBox ui:field="policeA" styleName="policeCB" />
+					<span ui:field="policeAText" class="policeText"></span>
+			    </span>
+			    
+			    <span >
+					<g:CheckBox ui:field="policeB" styleName="policeCB" />
+					<span ui:field="policeBText" class="policeText"></span>
+			    </span>
+			    
+			    <span >
+					<g:CheckBox ui:field="policeC" styleName="policeCB" />
+					<span ui:field="policeCText" class="policeText"></span>
+			    </span>
+			    
+			   	<span >
+					<g:CheckBox ui:field="policeD" styleName="policeCB" />
+					<span ui:field="policeDText" class="policeText"></span>
+			    </span>
+			    
+			    <span >
+					<g:CheckBox ui:field="policeE" styleName="policeCB" />
+					<span ui:field="policeEText" class="policeText"></span>
+			    </span>
 			</div>
 		</div>
 	</g:HTMLPanel>

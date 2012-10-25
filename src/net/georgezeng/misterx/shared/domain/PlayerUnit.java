@@ -128,4 +128,23 @@ public class PlayerUnit implements Serializable {
 		}
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) {
+			return true;
+		}
+		if (obj instanceof PlayerUnit) {
+			if (((PlayerUnit) obj).type.equals(this.type)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return type.hashCode();
+	}
+
 }

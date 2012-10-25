@@ -2,7 +2,6 @@ package net.georgezeng.misterx.app.service;
 
 import net.georgezeng.misterx.shared.domain.GameStatus;
 import net.georgezeng.misterx.shared.domain.Player;
-import net.georgezeng.misterx.shared.exception.RPCException;
 import net.georgezeng.misterx.shared.rpc.RPC;
 
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ public class RPCImpl implements RPC {
 	}
 
 	@Override
-	public GameStatus readyToGame(Player player) throws RPCException {
+	public GameStatus readyToGame(Player player) {
 		return gameSet.readyToGame(player);
 	}
 

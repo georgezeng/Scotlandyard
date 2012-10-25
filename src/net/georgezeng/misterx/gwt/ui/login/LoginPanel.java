@@ -94,7 +94,7 @@ public class LoginPanel extends Composite {
 		if (Constant.STATUS.getMisterX() == null) {
 			playerSide.addItem("反派 - X先生", PlayerType.MisterX.name());
 			JQuery.$(playerSide).change(new JQEventHandler() {
-				
+
 				@Override
 				public void call(Element thisEl, JQEvent jqEvent) {
 					JQueryObject jThis = JQuery.$(thisEl);
@@ -114,31 +114,33 @@ public class LoginPanel extends Composite {
 		for (PlayerUnit unit : Constant.STATUS.getPoliceRegUnits()) {
 			switch (unit.getType()) {
 			case PoliceA: {
-				showOrHidePoliceText(policeAText, PlayerUnitType.PoliceA, unit.getType());
+				showOrHidePoliceText(policeA, policeAText, PlayerUnitType.PoliceA);
 			}
 				break;
 			case PoliceB: {
-				showOrHidePoliceText(policeBText, PlayerUnitType.PoliceB, unit.getType());
+				showOrHidePoliceText(policeB, policeBText, PlayerUnitType.PoliceB);
 			}
 				break;
 			case PoliceC: {
-				showOrHidePoliceText(policeCText, PlayerUnitType.PoliceC, unit.getType());
+				showOrHidePoliceText(policeC, policeCText, PlayerUnitType.PoliceC);
 			}
 				break;
 			case PoliceD: {
-				showOrHidePoliceText(policeDText, PlayerUnitType.PoliceD, unit.getType());
+				showOrHidePoliceText(policeD, policeDText, PlayerUnitType.PoliceD);
 			}
 				break;
 			case PoliceE: {
-				showOrHidePoliceText(policeEText, PlayerUnitType.PoliceE, unit.getType());
+				showOrHidePoliceText(policeE, policeEText, PlayerUnitType.PoliceE);
 			}
 				break;
 			}
 		}
 	}
 
-	private void showOrHidePoliceText(SpanElement policeText, PlayerUnitType type1, PlayerUnitType type2) {
-		policeText.setInnerHTML(type1.getName());
+	private void showOrHidePoliceText(CheckBox cb, SpanElement policeText, PlayerUnitType type) {
+		JQuery.$(cb).show();
+		policeText.setInnerHTML(type.getName());
+		JQuery.$(policeText).show();
 	}
 
 	private void initDialog() {

@@ -105,6 +105,8 @@ public class GameStatus implements Serializable {
 	public void clearPlayer(Player quitPlayer) {
 		policePlayers.remove(quitPlayer);
 		totalPlayers.remove(quitPlayer);
+		policeUnits.removeAll(quitPlayer.getUnits());
+		policeRegUnits.addAll(quitPlayer.getUnits());
 	}
 
 	public void checkHasBeenChosen(Player player) {

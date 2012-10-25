@@ -17,8 +17,13 @@ body {
 	background-repeat: repeat;
 }
 
-.marginRight_15 {
+.policeText {
 	margin-right: 15px;
+	display: none;
+}
+
+.policeCB {
+	display: none;
 }
 
 .MisterX {
