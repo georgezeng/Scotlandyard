@@ -27,4 +27,8 @@ public class RPCImpl implements RPC {
 		gameSet.quit(player);
 	}
 
+	public void resetGame() {
+		gameSet = new GameSet(1L);
+	}
+
 }

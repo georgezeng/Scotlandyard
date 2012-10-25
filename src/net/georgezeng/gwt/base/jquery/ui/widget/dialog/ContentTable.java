@@ -11,21 +11,25 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
 public class ContentTable extends Composite {
-  static interface ViewBinder extends UiBinder<Widget, ContentTable> {
+	static interface ViewBinder extends UiBinder<Widget, ContentTable> {
 
-  }
+	}
 
-  private static final ViewBinder VIEW_BINDER = GWT.create(ViewBinder.class);
+	private static final ViewBinder VIEW_BINDER = GWT.create(ViewBinder.class);
 
-  public ContentTable() {
-    initWidget(VIEW_BINDER.createAndBindUi(this));
-  }
+	public ContentTable() {
+		initWidget(VIEW_BINDER.createAndBindUi(this));
+	}
 
-  @UiField
-  TableElement contentPanel;
+	@UiField
+	TableElement contentPanel;
 
-  public void setContent(String width, Element content) {
-    contentPanel.setWidth(width);
-    JQuery.$(contentPanel).find("td").append(content);
-  }
+	public void setContent(String width, Element content) {
+		try {
+			contentPanel.setWidth(width);
+		} catch (Exception e) {
+
+		}
+		JQuery.$(contentPanel).find("td").append(content);
+	}
 }
