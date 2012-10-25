@@ -11,7 +11,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:conf/appContext.xml
+			classpath:conf/spring/appContext.xml
 		</param-value>
 	</context-param>
 
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:conf/appContext-web.xml</param-value>
+			<param-value>classpath:conf/spring/appContext-web.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
