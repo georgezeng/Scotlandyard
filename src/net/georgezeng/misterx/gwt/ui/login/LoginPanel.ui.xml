@@ -15,15 +15,15 @@
 			</div>
 			<div ui:field="policeList" class="marginBottom_10">
 				<g:CheckBox ui:field="policeA" />
-				<span ui:field="policeAText"></span>
+				<span ui:field="policeAText" class="marginRight_15"></span>
 				<g:CheckBox ui:field="policeB" />
-				<span ui:field="policeBText"></span>
+				<span ui:field="policeBText" class="marginRight_15"></span>
 				<g:CheckBox ui:field="policeC" />
-				<span ui:field="policeCText"></span>
+				<span ui:field="policeCText" class="marginRight_15"></span>
 				<g:CheckBox ui:field="policeD" />
-				<span ui:field="policeDText"></span>
+				<span ui:field="policeDText" class="marginRight_15"></span>
 				<g:CheckBox ui:field="policeE" />
-				<span ui:field="policeEText"></span>
+				<span ui:field="policeEText" class="marginRight_15"></span>
 			</div>
 		</div>
 	</g:HTMLPanel>

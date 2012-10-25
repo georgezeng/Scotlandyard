@@ -17,6 +17,10 @@ body {
 	background-repeat: repeat;
 }
 
+.marginRight_15 {
+	margin-right: 15px;
+}
+
 .MisterX {
 	z-index: -1;
 	background-color: gray;

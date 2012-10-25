@@ -44,10 +44,13 @@ public class GameSet {
 		return status;
 	}
 
-	public GameStatus readyToGame(Player player) {
+	public synchronized GameStatus readyToGame(Player player) {
+		// 检查昵称是否重复
 		if (players.contains(player)) {
 			throw new RPCException("昵称已被使用，请重新输入新的昵称");
 		}
+		// 检查角色是否已经被选取
+		status.checkHasBeenChosen(player);
 		players.add(player);
 		if (player.getKey() != null) {
 			if (!key.equals(player.getKey())) {
@@ -64,9 +67,11 @@ public class GameSet {
 	}
 
 	public synchronized void quit(Player player) {
-		if (status.isHost(player)) {
+		if (player.isHost()) {
 			// 把游戏房主给下一个玩家
-			status.goToNextHost(player);
+			if (status.goToNextHost(player) == null) {
+				key = null;
+			}
 		} else {
 			status.clearPlayer(player);
 		}

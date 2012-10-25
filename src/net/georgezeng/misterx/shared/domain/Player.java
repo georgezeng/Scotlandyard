@@ -30,6 +30,14 @@ public class Player implements Serializable {
 		this.units = units;
 		this.key = key;
 	}
+	
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public boolean isHost() {
+		return key != null;
+	}
 
 	public String getName() {
 		return name;

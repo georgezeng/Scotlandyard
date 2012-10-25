@@ -5,6 +5,7 @@ import net.georgezeng.misterx.gwt.ui.map.Creator;
 import net.georgezeng.misterx.gwt.ui.ready.ReadyPanel;
 import net.georgezeng.misterx.gwt.ui.ticket.TicketPanel;
 import net.georgezeng.misterx.gwt.util.Constant;
+import net.georgezeng.misterx.shared.domain.Player;
 import au.com.bglcorp.web.base.jquery.ui.widget.dialog.BaseDialogFactory;
 import au.com.bglcorp.web.base.jquery.ui.widget.dialog.Dialog;
 
@@ -48,12 +49,20 @@ public class Entry extends Composite implements EntryPoint {
 	}
 
 	public void showLoginPanel() {
+		Window.addCloseHandler(new CloseHandler<Window>() {
+
+			@Override
+			public void onClose(CloseEvent<Window> event) {
+				Constant.ACTIVITY.quitGame();
+			}
+		});
+		Constant.PALYER = new Player("TmpHost", null, Constant.STATUS.getKey());
 		Constant.LOGIN_PANEL = new LoginPanel();
 	}
 
 	public void createGame() {
 		Constant.LOGIN_PANEL.close();
-		final Dialog waitBox = BaseDialogFactory.openWaitBox("正在加载内容，请耐心等待...");
+		final Dialog waitBox = BaseDialogFactory.openWaitBox("正在创建内容，请稍候...");
 		new Timer() {
 
 			@Override
@@ -63,7 +72,7 @@ public class Entry extends Composite implements EntryPoint {
 					waitBox.destroy();
 				} catch (Exception e) {
 					waitBox.destroy();
-					BaseDialogFactory.getMessageBox().showMessage("创建失败，请联系管理员");
+					BaseDialogFactory.getMessageBox().showMessage("创建游戏失败，请联系管理员");
 				}
 			}
 
@@ -81,20 +90,12 @@ public class Entry extends Composite implements EntryPoint {
 
 	private final native void onBeforeUnload() /*-{
 		window.onbeforeunload = function() {
-			return "离开当前页面将导致无法继续游戏，确定离开吗？";
+			return "游戏进行中，你确定要离开吗？";
 		};
 	}-*/;
 
 	public void showReadyPanel() {
 		onBeforeUnload();
-		Window.addCloseHandler(new CloseHandler<Window>() {
-
-			@Override
-			public void onClose(CloseEvent<Window> event) {
-				// 结束玩家状态
-				Constant.ACTIVITY.quitGame();
-			}
-		});
 		Constant.READY_PANEL = new ReadyPanel();
 	}
 

@@ -110,7 +110,7 @@ public class LoginPanel extends Composite {
 				}
 			}
 		});
-		for (PlayerUnit unit : Constant.STATUS.getPoliceUnits()) {
+		for (PlayerUnit unit : Constant.STATUS.getPoliceRegUnits()) {
 			switch (unit.getType()) {
 			case PoliceA: {
 				showOrHidePoliceText(policeAText, PlayerUnitType.PoliceA, unit.getType());
@@ -137,11 +137,7 @@ public class LoginPanel extends Composite {
 	}
 
 	private void showOrHidePoliceText(SpanElement policeText, PlayerUnitType type1, PlayerUnitType type2) {
-		if (type1.equals(type2)) {
-			JQuery.$(policeText).hide();
-		} else {
-			policeText.setInnerHTML(type1.getName());
-		}
+		policeText.setInnerHTML(type1.getName());
 	}
 
 	private void initDialog() {
