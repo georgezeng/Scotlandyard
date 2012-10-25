@@ -79,7 +79,7 @@ public class ReadyPanel extends Composite {
 		policeDText.setInnerHTML(PlayerUnitType.PoliceD.getName());
 		policeEText.setInnerHTML(PlayerUnitType.PoliceE.getName());
 
-		showTicks(Constant.PALYER.getUnits());
+		showTicks(Constant.STATUS.getTotalUnits());
 	}
 
 	private void showTicks(List<PlayerUnit> units) {

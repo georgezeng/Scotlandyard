@@ -16,6 +16,7 @@ public class GameStatus implements Serializable {
 	private boolean isGaming;
 	private List<PlayerUnit> policeRegUnits = new ArrayList<PlayerUnit>();
 	private List<PlayerUnit> policeUnits = new ArrayList<PlayerUnit>();
+	private List<PlayerUnit> totalUnits = new ArrayList<PlayerUnit>();
 	private Player misterX;
 	private Player host;
 	private List<Player> policePlayers = new ArrayList<Player>();
@@ -54,6 +55,10 @@ public class GameStatus implements Serializable {
 		return policeUnits;
 	}
 
+	public List<PlayerUnit> getTotalUnits() {
+		return totalUnits;
+	}
+
 	public List<PlayerUnit> getPoliceRegUnits() {
 		return policeRegUnits;
 	}
@@ -72,6 +77,7 @@ public class GameStatus implements Serializable {
 
 	public void setHost(Player host) {
 		this.host = host;
+		totalUnits.addAll(host.getUnits());
 		totalPlayers.add(host);
 	}
 
@@ -84,6 +90,7 @@ public class GameStatus implements Serializable {
 		policeUnits.addAll(player.getUnits());
 		policeRegUnits.removeAll(player.getUnits());
 		totalPlayers.add(player);
+		totalUnits.addAll(player.getUnits());
 	}
 
 	public Player goToNextHost(Player quitPlayer) {
@@ -107,6 +114,7 @@ public class GameStatus implements Serializable {
 		totalPlayers.remove(quitPlayer);
 		policeUnits.removeAll(quitPlayer.getUnits());
 		policeRegUnits.addAll(quitPlayer.getUnits());
+		totalUnits.removeAll(quitPlayer.getUnits());
 	}
 
 	public void checkHasBeenChosen(Player player) {

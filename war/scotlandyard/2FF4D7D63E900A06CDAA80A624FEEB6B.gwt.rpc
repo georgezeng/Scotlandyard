@@ -15,7 +15,7 @@ java.util.Collections$SingletonList, true, true, true, true, java.util.Collectio
 java.util.LinkedList, true, true, true, true, java.util.LinkedList/3953877921, 3953877921
 java.util.Stack, true, true, true, true, java.util.Stack/1346942793, 1346942793
 java.util.Vector, true, true, true, true, java.util.Vector/3057315478, 3057315478
-net.georgezeng.misterx.shared.domain.GameStatus, true, true, false, false, net.georgezeng.misterx.shared.domain.GameStatus/3225291647, 3225291647
+net.georgezeng.misterx.shared.domain.GameStatus, true, true, false, false, net.georgezeng.misterx.shared.domain.GameStatus/1495234353, 1495234353
 net.georgezeng.misterx.shared.domain.Player, true, true, true, true, net.georgezeng.misterx.shared.domain.Player/3684979352, 3684979352
 net.georgezeng.misterx.shared.domain.PlayerUnit, true, true, true, true, net.georgezeng.misterx.shared.domain.PlayerUnit/3525696552, 3525696552
 [Lnet.georgezeng.misterx.shared.domain.PlayerUnit;, true, true, true, true, [Lnet.georgezeng.misterx.shared.domain.PlayerUnit;/311394894, 311394894
