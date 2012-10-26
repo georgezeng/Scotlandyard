@@ -80,7 +80,7 @@ public class ReadyPanel extends Composite {
 		policeDText.setInnerHTML(PlayerUnitType.PoliceD.getName());
 		policeEText.setInnerHTML(PlayerUnitType.PoliceE.getName());
 		showTicks(Constant.STATUS.getTotalUnits());
-		Constant.START_CHECKER.scheduleRepeating(3000);
+		Constant.ACTIVITY.syncAllPlayers();
 	}
 
 	public void showTicks(List<PlayerUnit> units) {

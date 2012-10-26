@@ -7,7 +7,6 @@ import net.georgezeng.misterx.gwt.ui.ready.ReadyPanel;
 import net.georgezeng.misterx.shared.domain.GameStatus;
 import net.georgezeng.misterx.shared.domain.Player;
 
-import com.google.gwt.user.client.Timer;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 
 public class Constant {
@@ -18,11 +17,5 @@ public class Constant {
 	public static ReadyPanel READY_PANEL;
 	public static GameStatus STATUS;
 	public static Player PALYER;
-	public static final Timer START_CHECKER = new Timer() {
-
-		@Override
-		public void run() {
-			ACTIVITY.checkIfCanStartGame();
-		}
-	};
+	public static GameStatusChecker statusChecker;
 }

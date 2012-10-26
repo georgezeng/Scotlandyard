@@ -1,7 +1,10 @@
 package net.georgezeng.misterx.gwt;
 
+import net.georgezeng.gwt.base.jquery.core.handler.base.JQCommonHandler;
 import net.georgezeng.gwt.base.jquery.ui.widget.dialog.BaseDialogFactory;
 import net.georgezeng.gwt.base.jquery.ui.widget.dialog.Dialog;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.DialogButtonFactory;
+import net.georgezeng.gwt.base.jquery.ui.widget.dialog.component.MessageBox;
 import net.georgezeng.misterx.gwt.ui.login.LoginPanel;
 import net.georgezeng.misterx.gwt.ui.map.Creator;
 import net.georgezeng.misterx.gwt.ui.ready.ReadyPanel;
@@ -12,6 +15,7 @@ import net.georgezeng.misterx.shared.domain.Player;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.logical.shared.CloseEvent;
 import com.google.gwt.event.logical.shared.CloseHandler;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -69,9 +73,12 @@ public class Entry extends Composite implements EntryPoint {
 			public void run() {
 				try {
 					toCreateGame();
-					Constant.ACTIVITY.toSyncAllPlayers();
-					waitBox.setContent("游戏初始化成功，正在同步用户...");
 					waitBox.destroy();
+					if(Constant.PALYER.isHost()) {
+						showStartGamePanel();
+					} else {
+						Constant.ACTIVITY.openWaitBox("请等待房主确定开始游戏...");
+					}
 				} catch (Exception e) {
 					waitBox.destroy();
 					BaseDialogFactory.getMessageBox().showMessage("创建游戏失败，请联系管理员");
@@ -80,7 +87,7 @@ public class Entry extends Composite implements EntryPoint {
 
 		}.schedule(500);
 	}
-
+	
 	private void toCreateGame() {
 		new Creator(map.getContext2d()).draw();
 
@@ -88,6 +95,20 @@ public class Entry extends Composite implements EntryPoint {
 		TICKET_PANEL = new TicketPanel(false);
 		// Stations.S1.setCurrentPlayer(new PlayerUI(PlayerType.MisterX,
 		// "George"));
+	}
+	
+	public void showStartGamePanel() {
+		final MessageBox box = BaseDialogFactory.getMessageBox();
+		box.setContent("准备就绪，请点击开始按钮进行游戏");
+		box.setButtons(DialogButtonFactory.newOKButton(new JQCommonHandler() {
+			
+			@Override
+			public void call(Element thisEl) {
+				Constant.ACTIVITY.startGame();
+				box.destroy();
+			}
+		}));
+		box.open();
 	}
 
 	private final native void onBeforeUnload() /*-{

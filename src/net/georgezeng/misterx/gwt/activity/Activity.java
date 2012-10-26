@@ -3,6 +3,7 @@ package net.georgezeng.misterx.gwt.activity;
 import net.georgezeng.gwt.base.jquery.ui.widget.dialog.BaseDialogFactory;
 import net.georgezeng.gwt.base.jquery.ui.widget.dialog.component.WaitBox;
 import net.georgezeng.misterx.gwt.util.Constant;
+import net.georgezeng.misterx.gwt.util.GameStatusChecker;
 import net.georgezeng.misterx.shared.domain.GameStatus;
 import net.georgezeng.misterx.shared.rpc.RPC;
 
@@ -61,38 +62,26 @@ public class Activity {
 
 		});
 	}
+	
+	public void syncAllPlayers() {
+		Constant.statusChecker = new GameStatusChecker() {
 
-	private boolean isGettingStatus = false;
+			@Override
+			protected void check(GameStatus status) {
+				Constant.STATUS = status;
+				// 修改成员列表
+				Constant.READY_PANEL.showTicks(status.getTotalUnits());
 
-	public void checkIfCanStartGame() {
-		if (!isGettingStatus) {
-			isGettingStatus = true;
-			RPC.Instance.get().getGameStatus(new AbstractAsyncCallback<GameStatus>() {
-
-				@Override
-				public void onSuccess(GameStatus status) {
-					isGettingStatus = false;
-					Constant.STATUS = status;
-					// 修改成员列表
-					Constant.READY_PANEL.showTicks(status.getTotalUnits());
-
-					// 检查是否可以开始游戏
-					if (status.isCouldPlayGame()) {
-						Constant.START_CHECKER.cancel();
-						Constant.ENTRY_UI.createGame();
-					}
+				// 检查是否可以开始游戏
+				if (status.isCouldPlayGame()) {
+					Constant.statusChecker.cancel();
+					Constant.ENTRY_UI.createGame();
 				}
-
-				@Override
-				protected void doOnFailure() {
-					isGettingStatus = false;
-				}
-
-			});
-		}
+			}
+		}.start();
 	}
-
-	public void toSyncAllPlayers() {
-
+	
+	public void startGame() {
+		
 	}
 }

@@ -34,6 +34,13 @@ public final class BaseDialogFactory {
 		box.open();
 		return box;
 	}
+	
+	public static WaitBox openNewWaitBox(String content) {
+		WaitBox box = new WaitBox();
+		box.setContent(content);
+		box.open();
+		return box;
+	}
 
 	public static MessageBox getMessageBox(String boxName) {
 		MessageBox msgBox = messageBoxMap.get(boxName);
